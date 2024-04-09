@@ -37,6 +37,21 @@ public class EmpolyeeController {
 
     }
 
+    //update Employee
+    @PutMapping("{id}")
+    public ResponseEntity <EmpolyeeDto> updateEmpolyee(@PathVariable("id") long empolyeeId,  @RequestBody EmpolyeeDto UpdateEmpolyee){
+         EmpolyeeDto empolyeeDto = empoyeeService.updateEmpolyee(empolyeeId,UpdateEmpolyee);
+         return ResponseEntity.ok(empolyeeDto);
+
+    }
+
+    //delete  empolyee
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteEmpolyee(@PathVariable("id") long empolyeeId) {
+        empoyeeService.deleteEmpolyee(empolyeeId);
+        return ResponseEntity.ok("empolyee deleted with Id "+empolyeeId );
+    }
+
 
 
 

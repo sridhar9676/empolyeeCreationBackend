@@ -11,4 +11,8 @@ public interface EmpoyeeService {
 
     List <EmpolyeeDto> getAllEmployees();
 
+     EmpolyeeDto updateEmpolyee (long empolyeeId, EmpolyeeDto UpdateEmpolyee);
+
+     void deleteEmpolyee (long empolyeeId);
+
 }
